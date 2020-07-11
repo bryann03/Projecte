@@ -1,0 +1,18 @@
+<section>
+	<div class="container">
+		<h1>Detalles de {{ arrayMoviles.nombre | uppercase }}</h1>
+		<div class="row">
+			<div class="col-4">
+				<div class="card mb-3 mt-3">
+					<img class="card-img-top img-fluid" [src]="arrayMoviles.img" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title justify-content-center">{{arrayMoviles.nombre}}</h5>
+						<p class="card-text">{{arrayMoviles.desc}}</p>
+						<p class="card-text">{{arrayMoviles.precio}}</p>
+						<p class="card-text">{{arrayMoviles.marca}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

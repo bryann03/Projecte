@@ -1,0 +1,12 @@
+<div class="card mb-3 mt-3">
+  <img class="card-img-top img-fluid" [src]="movil.img" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title justify-content-center">{{movil.nombre}}</h5>
+    <p class="card-text">{{movil.desc}}</p>
+    <p class="card-text">{{movil.precio}}</p>
+    <p class="card-text">{{movil.marca}}</p>
+  </div>
+  <div class="card-footer">
+    <button type="button" (click)="verDetalle()" class="btn btn-primary">Ver detalles</button>
+  </div>
+</div>

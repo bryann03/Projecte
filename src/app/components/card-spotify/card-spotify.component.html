@@ -1,0 +1,11 @@
+<div class="card-columns">
+  <div (click)="verArtista(song)" class="card" *ngFor="let song of itemsSpotify">
+    <img [src]="song.images | noimage" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ song.name }}</h5>
+      <p class="card-text">
+        <span class="badge badge-pill badge-info m-1" *ngFor="let artista of song.artists" >{{ artista.name }}</span>
+      </p>
+    </div>
+  </div>
+</div>

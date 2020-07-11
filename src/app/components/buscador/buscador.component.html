@@ -1,0 +1,21 @@
+<section>
+	<div class="container">
+    <h1>Resultados de: {{ param }}</h1>
+
+    <div class="row" *ngIf="moviles.length == 0">
+      <div class="col-6">
+        <div class="alert alert-danger" role="alert">
+          No se encontraron resultados para: {{ param }}
+        </div>
+      </div>
+    </div>
+
+		<div class="row">
+			<div class="col-4" *ngFor="let movil of moviles">
+        <app-card-movil [movil]="movil" [index]="movil.id"></app-card-movil>
+			</div>
+		</div>
+	</div>
+</section>
+
+

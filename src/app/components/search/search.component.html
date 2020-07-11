@@ -1,0 +1,15 @@
+<section>
+  <div class="container">
+
+    <div class="row mt-5 mb-5">
+      <div class="col-12">
+        <input #termino type="text" (keyup)="buscarArtista(termino.value)" class="form-control"
+        placeholder="Buscar artista">
+      </div>
+    </div>
+
+    <app-loading *ngIf="loading"></app-loading>
+    <app-card-spotify *ngIf="!loading" [itemsSpotify]="arrayArtistas"></app-card-spotify>
+
+  </div>
+</section>

@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <h1>Demos <small>Angular</small></h1>
+    <hr>
+    <app-ng-style></app-ng-style>
+
+    <br><br>
+    <h3>Proceso asíncrono</h3>
+
+    <button type="button" class="btn btn-primary" (click)="ejecutar()" [disabled]="loading">
+        <i [ngClass]="{'fa-save': !loading, 'fa-refresh fa-spin': loading}" class="fa m-2"></i>
+        <span *ngIf="!loading">Guardar cambios</span>
+        <span *ngIf="loading">Wait a moment</span>
+    </button>
+
+    <p [appResaltado]="'orange'" >
+        HostListener (MouseEnter & MouseLeave (onHover) ) con directiva
+    </p>
+</div>

@@ -1,0 +1,16 @@
+<div class="container mt-5">
+    <h2>Rutas y rutas hijas</h2>
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary"
+                routerLinkActive="active" [routerLink]="['nuevo']">Nuevo</button>
+
+        <button type="button" class="btn btn-primary"
+                routerLinkActive="active" [routerLink]="['editar']">Editar</button>
+
+        <button type="button" class="btn btn-primary"
+                routerLinkActive="active" [routerLink]="['detalle']">Detalle</button>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

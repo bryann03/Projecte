@@ -1,0 +1,12 @@
+<section class="sectionMain">
+  <div class="container">
+    <app-loading *ngIf="loading"></app-loading>
+
+    <div *ngIf="error" class="alert alert-danger animated fadeIn">
+      <h3>Error</h3>
+      <p>{{ mensajeError }}, reload the page plz.</p>
+    </div>
+
+    <app-card-spotify [itemsSpotify]="nuevasCanciones"></app-card-spotify>
+  </div>
+</section>

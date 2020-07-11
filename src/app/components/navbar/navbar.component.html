@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">Brand</a>
+  <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="my-nav" class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="[ 'home']">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="[ 'moviles']">Moviles</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="[ 'pipes']">Pipes</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="[ 'search']">Search</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="[ 'varios']">Varios</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="[ 'usuario', 10]">Usuario</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="[ 'template']">FormTemplate</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="[ 'reactive']">FormReactive</a>
+      </li>
+    </ul>
+    <input class="form-control mr-sm-5" type="search" placeholder="Search" aria-label="Search"
+      (keyup.enter)="buscarMovil(buscarTexto.value)" #buscarTexto>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscarMovil(buscarTexto.value)">Search</button>
+    <button class="btn btn-outline-danger my-2 my-sm-0 ml-5" type="button" (click)="salir()">logout</button>
+  </div>
+</nav>
+<router-outlet></router-outlet>

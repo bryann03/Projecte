@@ -28,9 +28,14 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/bootstrap/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/bootstrap/js/jquery-3.4.1.min.js",
+              "src/assets/bootstrap/js/popper.min.js",
+              "src/assets/bootstrap/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -124,6 +129,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Projecte"
+    }
+  },
+  "defaultProject": "Projecte",
+  "cli": {
+    "analytics": false
+  }
 }

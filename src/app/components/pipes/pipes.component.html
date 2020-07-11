@@ -1,0 +1,149 @@
+<section>
+  <div class="container">
+    <h2 class="text-center m-5">Pipes Angular</h2>
+    <hr>
+
+    <div class="row">
+      <div class="col-12">
+
+        <table class="table table-light">
+          <thead class="thead-dark">
+            <tr>
+              <th>Variable</th>
+              <th>Pipe</th>
+              <th>Resultado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ nombre2 }}</td>
+              <td>custom pipe</td>
+              <td>{{ nombre2 | capitalizado:true }}</td>
+            </tr>
+
+            <tr>
+              <td>{{ nombre }}</td>
+              <td>uppercarse</td>
+              <td>{{ nombre | uppercase }}</td>
+            </tr>
+
+            <tr>
+              <td>{{ nombre }}</td>
+              <td>lowercase</td>
+              <td>{{ nombre | lowercase }}</td>
+            </tr>
+
+            <tr>
+              <td>{{ nombre }}</td>
+              <td>slice: 3 (Corta las primeras 3 posiciones)</td>
+              <td>{{ nombre | slice:3 }}</td>
+            </tr>
+
+            <tr>
+              <td>{{ nombre }}</td>
+              <td>slice:0:3 (Corta desde posición 0 hasta la 3)</td>
+              <td>{{ nombre | slice:0:3 }}</td>
+            </tr>
+            <tr>
+              <td>{{ arrayNumeros }}</td>
+              <td>slice:1:5</td>
+              <td>{{ arrayNumeros | slice:1:5 }}</td>
+            </tr>
+
+            <tr>
+              <td>{{ PI }}</td>
+              <td>number (Sólo entero)</td>
+              <td>{{ PI | number:'3.0-0'}}</td>
+            </tr>
+
+            <tr>
+              <td>{{ PI }}</td>
+              <td>number:'.0-2' (Redondeado a 2 decimales)</td>
+              <td>{{ PI | number:'.0-2'}}</td>
+            </tr>
+
+            <tr>
+              <td>{{ porcentaje }}</td>
+              <td>percent</td>
+              <td>{{ porcentaje | percent}}</td>
+            </tr>
+
+            <tr>
+              <td>{{ porcentaje }}</td>
+              <td>percent:'2.2-2' (Especificando los decimales)</td>
+              <td>{{ porcentaje | percent:'2.2-2'}}</td>
+            </tr>
+
+            <tr>
+              <td>{{ salario }}</td>
+              <td>currency (moneda/dinero)</td>
+              <td>{{ salario | currency}}</td>
+            </tr>
+
+            <tr>
+              <td>{{ salario }}</td>
+              <td>currency:'EUR€' (con código de moneda)</td>
+              <td>{{ salario | currency:'EUR€ '}}</td>
+            </tr>
+
+            <tr>
+              <td>{{ valorPromesa }}</td>
+              <td>async</td>
+              <td>{{ valorPromesa | async}}</td>
+            </tr>
+
+            <tr>
+              <td>{{ fecha }}</td>
+              <td>date</td>
+              <td>{{ fecha | date}}</td>
+            </tr>
+
+            <tr>
+              <td>{{ fecha }}</td>
+              <td>date:'medium'</td>
+              <td>{{ fecha | date:'medium'}}</td>
+            </tr>
+
+            <tr>
+              <td>{{ fecha }}</td>
+              <td>date:'short'</td>
+              <td>{{ fecha | date:'short'}}</td>
+            </tr>
+
+            <tr>
+              <td>{{ fecha }}</td>
+              <td>date:'MMMM-dd'</td>
+              <td>{{ fecha | date:'MMMM-dd'}}</td>
+            </tr>
+
+            <tr>
+              <td>{{ fecha }}</td>
+              <td>date:'MMMM-dd':'':'{{ idioma }}'
+                <br>
+                <button (click)="changeToSpanish()" type="button" class="btn btn-primary btn-sm m-2">Español</button>
+                <button (click)="changeToEnglish()" type="button" class="btn btn-primary btn-sm m-2">Inglés</button>
+              </td>
+              <td>{{ fecha | date:'MMMM-dd':'':idioma }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- <h4>Slice</h4>
+        <ul>
+          <li *ngFor="let num of arrayNumeros | slice:5:20">{{ num }}</li>
+        </ul> -->
+
+        <h3>JSON</h3>
+        <hr>
+        <div class="row mb-5">
+          <div class="col-12">
+            <pre>
+              {{ heroe | json }}
+            </pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
