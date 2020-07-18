@@ -29,6 +29,31 @@
                     <small *ngIf="correoNoValido" class="form-text text-danger">Correo obligatorio</small>
                 </div>
             </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">User</label>
+                <div class="col">
+                    <input class="form-control" type="email" placeholder="UserName"
+                        formControlName="userName" [class.is-invalid]="userNoValido">
+                    <small *ngIf="userNoValido" class="form-text text-danger">UserName pillado</small>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Contraseña</label>
+                <div class="col">
+                    <input class="form-control" type="password" placeholder="Contraseña"
+                    [class.is-invalid]="pass1NoValido" formControlName="pass">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Repite contraseña</label>
+                <div class="col">
+                    <input class="form-control" type="password" placeholder="Repite contraseña"
+                    [class.is-invalid]="repeatPassNoValido"  formControlName="repeatPass">
+                </div>
+            </div>
         </div>
 
         <div class="form-group row" formGroupName="direccion">

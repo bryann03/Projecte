@@ -44,17 +44,39 @@ export class ReactiveComponent implements OnInit {
     return this.formGroup.get('direccion.ciudad').invalid && this.formGroup.get('direccion.ciudad').touched
   }
 
+  get pass1NoValido(){
+    return this.formGroup.get('pass').invalid && this.formGroup.get('pass').touched
+  }
+
+  get userNoValido(){
+    return this.formGroup.get('userName').invalid && this.formGroup.get('userName').touched
+  }
+
+  get repeatPassNoValido(){
+    const pass1 = this.formGroup.get('pass').value;
+    const pass2 = this.formGroup.get('repeatPass').value;
+
+    //SI PASS1 ES IGUAL A PASS2 RETORNA TRUE (CON LOS DOS PUNTOS) SINO (CON EL INTERROGANTE) RETORNA FALSE
+    return ( pass1 === pass2 ) ? false : true;
+  }
+
   crearFormulario(){
     this.formGroup = this.formBuilder.group({
       nombre: ['', [ Validators.required, Validators.minLength(5) ] ],
       //PARA EJECUTAR EL VALIDADOR NO EJECUTAMOS COMO SIEMPRE SINO SIMPLEMENTE LE HACEMOS LA REFERENCIA SIN '()'
       apellido: ['', [ Validators.required, this.validador.noHuaya ] ],
       correo: ['', [ Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'), Validators.required ] ],
+      //VALIDADOR ASINCRONO
+      userName: ['', , this.validador.existeUserName],
+      pass: ['', Validators.required],
+      repeatPass: ['', Validators.required],
       direccion: this.formBuilder.group({
         distrito: ['', Validators.required],
         ciudad: ['', Validators.required],
       }),
       pasatiempos: this.formBuilder.array([])
+    },{
+      validators: this.validador.passwordsIguales('pass', 'repeatPass')
     });
   }
 
