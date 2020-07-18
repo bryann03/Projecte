@@ -45,6 +45,11 @@ export class ValidadoresService {
 
   //VALIDADRO ASÍNCRONO, DEVUELVE UNA PROMESA
   existeUserName( control: FormControl ): Promise<ErrorValidate> | Observable<ErrorValidate> {
+    //SI NO EXISTE NINGÚN VALOR, DIRECATAMENTE SE LE ENVIA EL RESOLVE NULL
+    if( !control.value ){
+      return Promise.resolve(null);
+    }
+
     return new Promise( (resolve, reject) => {
       setTimeout( () => {
         if( control.value === 'huaya' ){

@@ -15,6 +15,7 @@ export class ReactiveComponent implements OnInit {
               private validador: ValidadoresService) {
     this.crearFormulario();
     this.cargarData();
+    this.crearListeners();
   }
 
   ngOnInit() {
@@ -78,6 +79,16 @@ export class ReactiveComponent implements OnInit {
     },{
       validators: this.validador.passwordsIguales('pass', 'repeatPass')
     });
+  }
+
+  crearListeners(){
+    this.formGroup.valueChanges.subscribe( valor => {
+      console.log(valor);
+    });
+
+    this.formGroup.statusChanges.subscribe( valor => {
+      console.log(valor);
+    })
   }
 
   cargarData(){
