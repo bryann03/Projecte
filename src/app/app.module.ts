@@ -33,7 +33,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateComponent } from './pages/template/template.component';
-import { ReactiveComponent } from './pages/reactive/reactive.component'
+import { ReactiveComponent } from './pages/reactive/reactive.component';
+import { HeroesComponent } from './pages/heroes/heroes.component';
+import { HeroeComponent } from './pages/heroe/heroe.component'
 
 registerLocaleData(localEs);
 
@@ -66,7 +68,9 @@ registerLocaleData(localEs);
     LoginComponent,
     RegistroComponent,
     TemplateComponent,
-    ReactiveComponent
+    ReactiveComponent,
+    HeroesComponent,
+    HeroeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { HeroesComponent } from '../../pages/heroes/heroes.component';
 import { ReactiveComponent } from './../../pages/reactive/reactive.component';
 import { TemplateComponent } from './../../pages/template/template.component';
 import { UsuarioComponent } from './../usuario/usuario.component';
@@ -12,6 +13,7 @@ import { PipesComponent } from '../pipes/pipes.component';
 import { SearchComponent } from '../search/search.component';
 import { ArtistaComponent } from '../artista/artista.component';
 import { USUARIO_ROUTES } from '../usuario/usuario.routes';
+import { HeroeComponent } from 'src/app/pages/heroe/heroe.component';
 
 export const MAIN_ROUTES: Routes = [
   {
@@ -58,6 +60,14 @@ export const MAIN_ROUTES: Routes = [
     path: 'usuario/:id',
     component: UsuarioComponent,
     children: USUARIO_ROUTES
+  },
+  {
+    path: 'heroes',
+    component: HeroesComponent
+  },
+  {
+    path: 'heroe/:id',
+    component: HeroeComponent
   },
   {
     path: '**',
