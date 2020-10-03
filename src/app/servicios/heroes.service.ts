@@ -32,4 +32,29 @@ export class HeroesService {
     delete heroeTemp.id;
     return this.http.put(`${this.url}/heroes/${heroe.id}.json`, heroeTemp);
   }
+
+  getHeroes(){
+    //TRATAMOS LA RSPUESTA PARA QUE DEVUELVA UN ARRAY DE OBJETOS Y SE PUEDA ITERAR
+    return this.http.get(`${this.url}/heroes.json`)
+            .pipe(
+              map( this.crearArrayHeroes )
+            );
+  }
+
+  private crearArrayHeroes( heroesObj: object ){
+    if( heroesObj === null ) { return []; }
+    const heroes: HeroeModel[] = [];
+    console.log(heroesObj);
+
+    Object.keys( heroesObj ).forEach( key => {
+      const heroe: HeroeModel = heroesObj[key];
+      heroe.id = key;
+      heroes.push(heroe);
+    });
+    return heroes;
+  }
+
+  getHeroeById(id: string){
+    return this.http.get(`${this.url}/heroes/${id}.json`);
+  }
 }
