@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HeroeModel } from '../models/heroe.mode';
-import { map } from 'rxjs/operators';
+import { map, delay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -33,11 +33,16 @@ export class HeroesService {
     return this.http.put(`${this.url}/heroes/${heroe.id}.json`, heroeTemp);
   }
 
+  deleteHeroe(id: string){
+    return this.http.delete(`${this.url}/heroes/${id}.json`);
+  }
+
   getHeroes(){
     //TRATAMOS LA RSPUESTA PARA QUE DEVUELVA UN ARRAY DE OBJETOS Y SE PUEDA ITERAR
     return this.http.get(`${this.url}/heroes.json`)
             .pipe(
-              map( this.crearArrayHeroes )
+              map( this.crearArrayHeroes ),
+              delay(1000)
             );
   }
 
